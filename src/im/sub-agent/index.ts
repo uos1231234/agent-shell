@@ -1,0 +1,6 @@
+export type { SubAgentConfig } from './config.js'
+export { SubAgentRegistry, defaultAgentsDir } from './registry.js'
+export { DEFAULT_SUB_AGENT_TOOL_POLICY, PERMISSIVE_SUB_AGENT_POLICY, EDITOR_TOOL_POLICY, applyToolPolicy, findMatchingPattern } from './policy.js'
+export type { SubAgentToolPolicy, ToolPolicyRule } from './policy.js'
+export { validateSubAgentConfig, effectiveToolPolicy } from './config.js'
+export { AgentTree, AgentNode, generateInstanceId } from './tree.js'

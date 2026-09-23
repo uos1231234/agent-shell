@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2022"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    // 2026-09-15：防止误跑裸 `npx tsc` 把 .ts 转译成 .js 落进源目录旁——
+    // 那些 .js 未跟踪、且会罩住同名 .ts 劫持 vitest/vite 解析（import 都写 .js 后缀，
+    // vite 优先命中真实 .js）。本仓只做类型检查（typecheck: tsc --noEmit），
+    // 运行靠 tsx/vitest 直吃 .ts，从不需要编译产物。wiki-mcp 的本源 .js 是已跟踪
+    // 源码，与此无涉。
+    "noEmit": true
+  },
+  "include": ["src/**/*", "tests/**/*", "examples/**/*", "skills/**/*.d.ts"]
+}

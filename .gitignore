@@ -1,0 +1,22 @@
+node_modules/
+.rag-cache/
+# 分发构建产物（tsc 输出 + 便携打包组装区）
+/dist/
+/build/
+# e2e example scratch dirs
+tmp-e2e-*/
+
+# webapp build output & env
+webapp/dist/
+webapp/node_modules/
+*.tsbuildinfo
+/launcher-data/
+
+# web-host 运行会话数据残留
+.web-host-sessions/
+
+# 探针/验收 scratch（本地临时，不入库）
+.probe-*/
+
+# wiki-mcp 运行时生成的用户知识库数据
+src/mcp-servers/wiki-mcp/data/

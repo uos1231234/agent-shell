@@ -1,0 +1,10 @@
+# 行尾符纪律：TypeScript/JSON/Markdown 统一 LF。
+# 背景：Windows 检出会把 LF 写成 CRLF，导致整文件 diff 噪音
+# （2026-09-22 实测 src/shared/tool-context.ts 58 插 58 删全行 churn）。
+* text=auto eol=lf
+# 二进制：禁止任何 eol 转换
+*.png binary
+*.ico binary
+*.zip binary
+*.wasm binary
+launcher/*.ico filter=lfs diff=lfs merge=lfs -text

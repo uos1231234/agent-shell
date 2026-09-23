@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/* agent-shell UI tokens —— deepseek harness 原版明亮风格。
+   色值来源：dsh-desktop Market.module.css 实际使用频率最高的 token 集合
+   （[已验证] 2026-09-06）：白底 #fff、浅灰面板 #f7f8fa/#f3f4f6、
+   品牌蓝 #4f6ef7、主文字 #1f2328、次文字 #6b7280、边框 #e5e7eb。 */
+:root {
+  --bg: #ffffff;
+  --bg-panel: #f7f8fa;
+  --bg-subtle: #f3f4f6;
+  --bg-elevated: #ffffff;
+  --border: #e5e7eb;
+  --border-strong: #d9dde3;
+  --text: #1f2328;
+  --text-dim: #6b7280;
+  --accent: #4f6ef7;
+  --accent-blue: #4f6ef7;
+  --ok: #16a34a;
+  --warn: #b45309;
+  --warn-bg: #fdf3e3;
+  --err: #dc2626;
+  color-scheme: light;
+}
+
+/* 深色模式留待显式切换开关（跟随系统会被 headless/暗色系统意外命中，
+   与"明亮白"的拍板相悖）；当前固定明亮主题。 */
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+}
+
+/* markdown 消息体 */
+.md-body { line-height: 1.7; overflow-wrap: anywhere; }
+.md-body pre {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  overflow-x: auto;
+  font-size: 13px;
+}
+.md-body code { background: var(--bg-subtle); border-radius: 4px; padding: 1px 5px; font-size: 13px; }
+.md-body pre code { background: transparent; padding: 0; }
+.md-body table { border-collapse: collapse; margin: 8px 0; }
+.md-body th, .md-body td { border: 1px solid var(--border); padding: 4px 8px; }
+.md-body blockquote { border-left: 3px solid var(--border-strong); margin: 8px 0; padding-left: 12px; color: var(--text-dim); }
+.md-body a { color: var(--accent-blue); }
+.md-body h1, .md-body h2, .md-body h3 { margin: 12px 0 6px; }
+
+/* 细滚动条 */
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
+*::-webkit-scrollbar-track { background: transparent; }

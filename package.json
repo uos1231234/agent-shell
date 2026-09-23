@@ -1,0 +1,38 @@
+{
+  "name": "agent-shell",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "SEE LICENSE IN LICENSE",
+  "description": "Shell (state machine + guards) + Protocol (OpenAI) + IM (Information Modeling as first-class citizen)",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "example:minimal": "tsx examples/minimal.ts",
+    "example:guard-demo": "tsx examples/guard-demo.ts",
+    "example:tool-flow": "tsx examples/tool-flow.ts",
+    "example:sub-agent": "tsx examples/sub-agent-harness.ts",
+    "example:mcp-skill": "tsx examples/mcp-skill-harness.ts",
+    "example:real-llm": "tsx examples/real-llm-monitor.ts",
+    "example:logger-smoke": "tsx examples/logger-smoke.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/ws": "^8.18.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@mozilla/readability": "^0.6.0",
+    "iconv-lite": "^0.7.3",
+    "linkedom": "^0.18.13",
+    "ws": "^8.21.3"
+  }
+}

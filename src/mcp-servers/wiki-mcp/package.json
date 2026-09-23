@@ -1,0 +1,12 @@
+{
+  "name": "@agent-shell/wiki-mcp",
+  "version": "0.1.0",
+  "description": "Code-domain wiki MCP server for agent-shell",
+  "type": "module",
+  "main": "wiki_server.js",
+  "bin": { "wiki-mcp": "wiki_server.js" },
+  "scripts": {
+    "start": "node wiki_server.js",
+    "test": "node tests/smoke.js"
+  }
+}
